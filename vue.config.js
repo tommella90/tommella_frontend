@@ -8,9 +8,3 @@ module.exports = {
       ? '/'
       : '/'
   };
-
-  module.exports = {
-    publicPath: '/tommella-frontend/', // GitHub Pages uses this base URL
-  };
-  
-  
