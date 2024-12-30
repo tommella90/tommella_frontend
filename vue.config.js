@@ -1,7 +1,21 @@
-const { defineConfig } = require('@vue/cli-service')
+// const { defineConfig } = require('@vue/cli-service')
+// module.exports = defineConfig({
+//   transpileDependencies: true
+// })
+
 module.exports = defineConfig({
-  transpileDependencies: true
-})
+  transpileDependencies: true,
+  devServer: {
+    proxy: {
+      '/api': {
+        target: 'https://tommella-cv-prod-ee14d9b8bb74.herokuapp.com',
+        changeOrigin: true,
+        pathRewrite: { '^/api': '' },
+      },
+    },
+  },
+});
+
 
 // const CopyWebpackPlugin = require('copy-webpack-plugin');
 
